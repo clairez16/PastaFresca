@@ -1,7 +1,13 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    Pasta Fresca
+  <% if user_signed_in? %>
+    <%= link_to pastum_index_path, class: "navbar-wagon-brand" do %>
+      Pasta Fresca
+    <% end %>
+  <% else %>
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      Pasta Fresca
+    <% end %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -10,7 +16,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Au menu", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Au menu", pastum_index_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Name with dropdown menu -->
       <div class="navbar-wagon-item">
