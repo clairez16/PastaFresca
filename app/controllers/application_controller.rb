@@ -8,4 +8,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :city, :phone_number])
   end
 
+  protected
+
+  def after_sign_in_path_for(resource)
+    request.env['omniauth.origin'] || pastum_index_path(resource) || root_path
+  end
+
 end
