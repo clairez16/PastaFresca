@@ -11,8 +11,15 @@
 }
 
 /* Logo */
-.navbar-wagon-brand img {
-  height: 50px;
+.navbar-wagon-brand {
+  color: $light-green;
+  font-family: 'Sarina', cursive;
+  font-size: 26px;
+}
+
+.navbar-wagon-brand:hover {
+  color: $light-green;
+  text-decoration: none;
 }
 
 /* User Avatar */
@@ -35,13 +42,30 @@
   padding: 0 20px;
 }
 
+.navbar-wagon-btn {
+  background-color: $light-green;
+  color: white;
+  font-weight: 600;
+  padding: 7px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.navbar-wagon-btn:hover {
+  color: white;
+  text-decoration: none;
+  background-color: #073e2c;
+}
+
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
-  font-size: 14px;
+  color: $light-green;
+  font-weight: 600;
+  font-size: 16px;
 }
+
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: #0c7c57;
   text-decoration: none;
 }
 
