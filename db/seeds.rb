@@ -6,7 +6,7 @@ url = "https://www.nonnabox.com/types-of-pasta/"
 html_file = open(url).read
 html_doc = Nokogiri::HTML(html_file)
 
-puts "Seeding..."
+puts "Seeding the pastas"
 
 html_doc.search('.ez-toc-section').each do |element|
   pasta_name = element.text.strip.match(/(?<=\. ).*/)
@@ -15,4 +15,11 @@ html_doc.search('.ez-toc-section').each do |element|
   end
 end
 
-puts "Finished seeding"
+puts "Finished seeding the pastas"
+
+puts "Seeding the subscriptions"
+
+first_offer = Subscription.create(name: "Pack Petite Faim", price_per_month: 15, number_of_packs_per_week: 2)
+second_offer = Subscription.create(name: "Pack Grosse Faim", price_per_month: 25, number_of_packs_per_week: 4)
+
+puts "Finished seeding the subscriptions"
