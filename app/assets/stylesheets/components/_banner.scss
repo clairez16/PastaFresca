@@ -1,0 +1,46 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+.banner-content .btn {
+  font-size: 22px;
+  font-weight: 600;
+  background-color: $light-green;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  padding: 10px 40px;
+}
+
+.list-inline {
+  padding-top: 12.5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.list-inline a {
+  color: white;
+}
+
+.list-inline a:hover {
+  text-decoration: underline;
+}
