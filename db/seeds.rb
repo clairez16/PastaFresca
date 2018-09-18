@@ -1,7 +1,18 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+require 'nokogiri'
+
+url = "https://www.nonnabox.com/types-of-pasta/"
+
+html_file = open(url).read
+html_doc = Nokogiri::HTML(html_file)
+
+puts "Seeding..."
+
+html_doc.search('.ez-toc-section').each do |element|
+  pasta_name = element.text.strip.match(/(?<=\. ).*/)
+  if pasta_name.nil? == false
+    Pastum.create(name: pasta_name[0].capitalize)
+  end
+end
+
+puts "Finished seeding"

@@ -1,3 +1,7 @@
-<% @all_pasta.each do |one_pasta| %>
-  <%= one_pasta.name %>
-<% end %>
+<ul>
+  <% @all_pasta.each do |one_pasta| %>
+    <li>
+      <%= one_pasta.name %>
+    </li>
+  <% end %>
+</ul>
