@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :pastum, only: [:index]
+  resources :users, only: [:edit, :update]
 end

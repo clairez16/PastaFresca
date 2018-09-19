@@ -1,0 +1,19 @@
+<% if current_user.subscription_id == 1 %>
+  <h5>
+    Vous n'êtes pas abonné pour l'instant!
+  </h5>
+<% else %>
+  <h5>
+    Vous êtes abonné au <%= current_user.subscription.name %>
+  </h5>
+<% end %>
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :subscription_id, collection: @subscription_plans  %>
+  <%= f.submit "M'abonner", class: "btn btn-primary" %>
+<% end %>
+
+<%= simple_form_for @user do |f| %>
+  <%= f.hidden_field :subscription_id, value: 1 %>
+  <%= f.submit "Se désabonner", class: "btn btn-primary" %>
+<% end %>
