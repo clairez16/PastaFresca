@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(resource)
-    request.env['omniauth.origin'] || pastum_index_path(resource) || root_path
+    request.env['omniauth.origin'] || noodles_path(resource) || root_path
   end
 
 end

@@ -10,15 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_18_133709) do
+ActiveRecord::Schema.define(version: 2018_09_19_133712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "pasta", force: :cascade do |t|
+  create_table "noodle_orders", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "noodle_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["noodle_id"], name: "index_noodle_orders_on_noodle_id"
+    t.index ["order_id"], name: "index_noodle_orders_on_order_id"
+  end
+
+  create_table "noodles", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "subscriptions", force: :cascade do |t|
@@ -46,5 +62,8 @@ ActiveRecord::Schema.define(version: 2018_09_18_133709) do
     t.index ["subscription_id"], name: "index_users_on_subscription_id"
   end
 
+  add_foreign_key "noodle_orders", "noodles"
+  add_foreign_key "noodle_orders", "orders"
+  add_foreign_key "orders", "users"
   add_foreign_key "users", "subscriptions"
 end
