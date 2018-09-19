@@ -18,6 +18,8 @@
       <!-- Links when logged in -->
       <%= link_to "Au menu", noodles_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
+      <%= link_to "Passer commande", new_noodle_order_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
       <!-- Name with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
@@ -33,7 +35,7 @@
             </li>
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Historique de livraison") %>
+                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Historique de commandes") %>
               <% end %>
             </li>
             <li>
