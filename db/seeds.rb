@@ -19,6 +19,7 @@ puts "Finished seeding the pastas"
 
 puts "Seeding the subscriptions"
 
+initial_offer = Subscription.create(name: "Pas d'abonnement", price_per_month: 0, number_of_packs_per_week: 0)
 first_offer = Subscription.create(name: "Pack Petite Faim", price_per_month: 15, number_of_packs_per_week: 2)
 second_offer = Subscription.create(name: "Pack Grosse Faim", price_per_month: 25, number_of_packs_per_week: 4)
 
