@@ -11,7 +11,7 @@ puts "Seeding the pastas"
 html_doc.search('.ez-toc-section').each do |element|
   pasta_name = element.text.strip.match(/(?<=\. ).*/)
   if pasta_name.nil? == false
-    Pastum.create(name: pasta_name[0].capitalize)
+    Noodle.create(name: pasta_name[0].capitalize)
   end
 end
 

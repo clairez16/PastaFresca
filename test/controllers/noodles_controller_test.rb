@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class PastumControllerTest < ActionDispatch::IntegrationTest
+class NoodlesControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get pastum_index_url
+    get noodles_index_url
     assert_response :success
   end
 
