@@ -6,7 +6,8 @@ class OrdersController < ApplicationController
   end
 
   def create
-
+    raise
+    @order = Order.create(user: current_user)
   end
 
   def index
