@@ -1,13 +1,26 @@
 .banner {
   color: white;
   text-align: center;
-  height: 100vh;
+  height: calc(100vh - 70px - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.banner-noodle-index {
+  color: white;
+  text-align: center;
+  height: calc(50vh - 70px);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center center;
+}
+
 .banner h1 {
   font-size: 35px;
   font-weight: bold;
@@ -21,7 +34,7 @@
   margin-bottom: 30px;
 }
 
-.banner-content .btn {
+.banner .banner-content .btn {
   font-size: 22px;
   font-weight: 600;
   background-color: $light-green;
@@ -43,4 +56,21 @@
 
 .list-inline a:hover {
   text-decoration: underline;
+}
+
+.banner-noodle-index .banner-content .btn {
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #fdc504;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  padding: 10px 40px;
+}
+
+.banner-noodle-index p {
+  font-size: 25px;
+  font-weight: normal;
+  color: white;
+  margin-bottom: 30px;
 }

@@ -1,3 +1,16 @@
+<div class="banner-noodle-index" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'second-banner.jpg'%>);">
+  <div class="banner-content">
+    <% if current_user.subscription.id == 1 %>
+      <p>Mais que vois-je! Vous n'êtes pas abonné!</p>
+      <%= link_to "Je m'abonne", edit_user_path(current_user), class: "btn btn-warning btn-lg" %>
+    <% else %>
+      <p>Vous n'avez pas encore sélectionné vos pâtes pour la semaine prochaine</p>
+      <%= link_to "Je compose mon panier", noodle_orders_new_path, class: "btn btn-warning btn-lg" %>
+    <% end %>
+  </div>
+</div>
+
+
 <h3> Notre sélection de pâtes fraîches </h3>
 
 <ul>
