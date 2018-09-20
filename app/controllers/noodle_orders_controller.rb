@@ -1,17 +1,25 @@
 class NoodleOrdersController < ApplicationController
   def new
     @order = Order.new
-    @noodleorder1 = NoodleOrder.new
+    @noodleorder = NoodleOrder.new
     @pastas = Noodle.all
   end
 
   def create
-    raise
-    order = Order.create!(user: current_user)
-    noodleorder = NoodleOrder.new(noodleorder_params)
-    noodleorder.order = order
-    noodleorder.save!
-    redirect_to(root_path)
+    @order = Order.new
+    @noodleorder = NoodleOrder.new
+    @pastas = Noodle.all
+    noodleorder_params
+    liste_noodles = params[:noodle_order][:noodle_id].drop(1)
+    if liste_noodles.length != current_user.subscription.number_of_packs_per_week
+      redirect_to new_noodle_order_path
+    else
+      order = Order.create!(user: current_user)
+      liste_noodles.each do |noodle_id|
+        NoodleOrder.create!(noodle: Noodle.find(noodle_id), order: order)
+      end
+      redirect_to orders_path
+    end
   end
 
   private

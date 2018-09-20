@@ -1,0 +1,11 @@
+<h1> Order index </h1>
+
+<ul>
+<% @orders.each do |order| %>
+  <li>
+    <% order.noodle_orders.each do |noodleorder|%>
+      <%= noodleorder.noodle.name %>
+    <% end %>
+  </li>
+<% end %>
+</ul>

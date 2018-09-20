@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   resources :noodles, only: [:index]
   resources :users, only: [:edit, :update]
-  resources :orders, only: [:new, :create, :index]
+  resources :orders, only: [:index]
   resources :noodle_orders, only: [:new, :create]
 end
