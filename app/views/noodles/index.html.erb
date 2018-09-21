@@ -5,7 +5,7 @@
       <%= link_to "Je m'abonne", edit_user_path(current_user), class: "btn btn-warning btn-lg" %>
     <% else %>
       <p>Vous n'avez pas encore sélectionné vos pâtes pour la semaine prochaine</p>
-      <%= link_to "Je compose mon panier", noodle_orders_new_path, class: "btn btn-warning btn-lg" %>
+      <%= link_to "Je compose mon panier", new_order_path, class: "btn btn-warning btn-lg" %>
     <% end %>
   </div>
 </div>
