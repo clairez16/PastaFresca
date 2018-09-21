@@ -2,10 +2,14 @@
 
 <p>Nous vous confirmons votre commande pour la semaine prochaine.</p>
 <% if @order.noodles.length == 2 %>
-  <p>Vous recevrez mardi soir des <%= @order.noodles[0].name %> et des <%= @order.noodles[1].name %>.</p>
-<end>
+  <p>
+    Vous recevrez mardi soir des <%= @order.noodles[0].name %> et des <%= @order.noodles[1].name %>.
+  </p>
+<% end %>
 <% if @order.noodles.length == 4 %>
-  <p>Vous recevrez mardi soir des <%= @order.noodles[0].name %>, des <%= @order.noodles[1].name %>, des <%= @order.noodles[2].name %>, et des <%= @order.noodles[3].name %>.</p>
-<end>
+  <p>
+    Vous recevrez mardi soir des <%= @order.noodles[0].name %>, des <%= @order.noodles[1].name %>, des <%= @order.noodles[2].name %>, et des <%= @order.noodles[3].name %>.
+  </p>
+<% end %>
 
 <p>See ya!</p>
