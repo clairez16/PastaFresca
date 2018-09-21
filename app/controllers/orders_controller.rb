@@ -11,6 +11,7 @@ class OrdersController < ApplicationController
       redirect_to new_order_path
     else
       order = Order.create!(user: current_user, noodle_ids: liste_noodles)
+      UserMailer.order_confirmation(current_user, order).deliver_now
       redirect_to orders_path
     end
   end

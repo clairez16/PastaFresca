@@ -1,0 +1,11 @@
+Bonjour <%= @user.name %>,
+
+Nous vous confirmons votre commande pour la semaine prochaine.
+<% if @order.noodles.length == 2 %>
+  Vous recevrez mardi soir des <%= @order.noodles[0].name %> et des <%= @order.noodles[1].name %>.
+<end>
+<% if @order.noodles.length == 4 %>
+  Vous recevrez mardi soir des <%= @order.noodles[0].name %>, des <%= @order.noodles[1].name %>, des <%= @order.noodles[2].name %>, et des <%= @order.noodles[3].name %>.
+<end>
+
+See ya!
