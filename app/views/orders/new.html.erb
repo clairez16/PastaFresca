@@ -1,0 +1,19 @@
+<h1>Passer Commande</h1>
+
+<% if current_user.subscription_id == 1 %>
+  <h3>Vous n'êtes pas encore abonné!</h3>
+  <%= link_to "Je m'abonne", edit_user_path(current_user), class: "btn btn-warning btn-lg" %>
+<% else %>
+  <h3>
+    Vous êtes abonné au <%= current_user.subscription.name %>
+  </h3>
+  <h4>
+    Merci de sélectionner <%= current_user.subscription.number_of_packs_per_week %> types de pâtes
+  </h4>
+<% end %>
+
+<%= simple_form_for @order do |f| %>
+  <%= f.input :noodles, collection: @pastas, as: :check_boxes  %>
+  <%= f.submit "Passer commande", class: "btn btn-primary" %>
+<% end %>
+
